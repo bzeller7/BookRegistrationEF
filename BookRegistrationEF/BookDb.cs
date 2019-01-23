@@ -27,5 +27,15 @@ namespace BookRegistrationEF
 
             return allBooks;
         }
+
+        public static void AddBook(Book b)
+        {
+            //Database context
+            BookRegContext context = new BookRegContext();
+
+            //Create insert query
+            context.Book.Add(b);
+
+        }
     }
 }
