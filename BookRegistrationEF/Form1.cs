@@ -29,5 +29,16 @@ namespace BookRegistrationEF
             cboBooks.DataSource = books;
             cboBooks.DisplayMember = nameof(Book.Title);
         }
+
+        private void btnAddBook_Click(object sender, EventArgs e)
+        {
+            Book b = new Book();
+            b.ISBN = "789123";
+            b.Title = "Joe's Test Book";
+            b.Price = 10;
+
+            BookDb.AddBook(b);
+            MessageBox.Show("Book added!");
+        }
     }
 }

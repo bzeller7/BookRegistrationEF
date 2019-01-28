@@ -34,7 +34,11 @@ namespace BookRegistrationEF
             BookRegContext context = new BookRegContext();
 
             //Create insert query
+            //Adds insert to a list of pending queries
             context.Book.Add(b);
+
+            //Executes all pending Insert/Update/Delete
+            context.SaveChanges();
 
         }
     }
